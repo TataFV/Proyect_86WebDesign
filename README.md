@@ -6,45 +6,29 @@ Las asignaturas que se engloban dentro del proyecto son: Programación, COD, Bas
 
 ***
 
-### Idea
+### Idea Inicial
 
-Crear el portal web coorporativo de una empresa inventada **86 Web Design**. <br>
-La web cuenta con una sección para usuarios con logins diferentes según la categoría del empleado.<br>
+Crear el portal web coorporativo de la empresa inventada **86 Web Design** con una sección privada para usuarios de la empresa. <br>
 
-	El proyecto se centrará en el desarrollo de que podría ser en el futuro una aplicación independiente.
+### Idea final
 
-***
+Crear una aplicación web para usuarios de una empresa con logins diferentes según la categoría del empleado.<br>
+Se distinguen dos tipos de empleado: CEO y Empleado. 
 
-### Mapa Web 
-	Sobre nosotros
-	Contacto
-	Login Usuario > CEO/Empleados
+El **CEO** cumple el papel de administrador y tiene acceso al _panel CEO_. Desde este panel el CE0 puede realizar diferentes funciones:
+1. Acceder a los datos de los empleados (_consulta en base de datos_).
+2. Crear tareas que se asignan automaticamente a los usuarios segñun las van finalizando. Estas tareas se les puede asignar prioridad para que le aparezca  una tarea antes que otra.
+3. Crear gráficas. Estas gráficas tienen el propósito hacer un seguimiento de las tareas de los trabajadores)
 
+El **Empleado** tiene acceso al _panel Empleado_. Desde este panel el empleado puede realizar diferentes funciones:
+1. Ver las tareas que tiene asignadas.
+2. Comprobar el estado de las tareas.
+3. Marcar una tarea como completada.
 
-
-***
-
-## Funcionalidades
-1. Login de usuarios
-2. Panel CEO
-  1. 
-    Empleados > Crear empleados 
-  1.        
-    Tareas > Crear tareas 
-  1.
-    Gráficas > Crear gráficas 
-    
-1. Panel Empleado
-
-	El usuario que se logea como CE0 accede a un _**panel de administración**_ en el que tiene acceso a las secciones de _empleados_, _tareas_ y _gráficas_.<br>
-	El usuario que se logea como Empleado accede a un _**panel de empleado**_ donde puede ver las tareas asignadas automaticamente según las va finalizando.<br>
-	El empleado indicará cuando finaliza la tarea.
-
-***
 
 ## Tecnologías
+
 	- PHP
 	- MySQL
 	- JAVASCRIPT
 	- JQUERY
-
