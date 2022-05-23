@@ -2,7 +2,7 @@
 
 /**
 * Class User
-* Representa un Usuario en la aplicacion.
+* Representa un Usuario en la aplicacion
 */
 class User {
 
@@ -37,7 +37,7 @@ class User {
     */
     private $password;
 
-    /**
+    /**E
     * El rol del usuario, puede ser CEO o empleado
     * @var string 
     */
