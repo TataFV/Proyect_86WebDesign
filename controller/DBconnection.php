@@ -1,16 +1,25 @@
 <?php
 
-//Conexion a la base de datos empresa_86WebDesign
+class DBconnection{
+    
+    /**
+     * Conexion a la base de datos 
+     */
+    private $connection;
 
-$name_server = "localhost";
-$user = "empresa86";
-$password = "#7gD72Ya22d&SCK";
-$db = "empresa_86WebDesign"; 
-$connection = new mysqli($name_server, $user, $password, $db);
+    function __construct(){
 
-//Si hay error de conexion
+        $name_server = "localhost";
+        $user = "empresa86";
+        $password = "#7gD72Ya22d&SCK";
+        $db = "empresa_86WebDesign"; 
+        $this->connection = new mysqli($name_server, $user, $password, $db);
 
-if($connection->connect_error){
-    die("Connection failed:" . $connection->connect_error);
+        //Si hay error de conexion
+
+        if($this->connection->connect_error){
+            die("Connection failed:" . $this->connection->connect_error);
+        }
+    }
+
 }
-
