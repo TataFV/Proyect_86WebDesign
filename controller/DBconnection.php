@@ -1,9 +1,10 @@
 <?php
 
 class DBconnection{
-    
+
     /**
      * Conexion a la base de datos 
+     * @var mysqli
      */
     private $connection;
 
@@ -20,6 +21,15 @@ class DBconnection{
         if($this->connection->connect_error){
             die("Connection failed:" . $this->connection->connect_error);
         }
+    }
+
+    /**
+     * Funcion que realiza las consultas a la base de datos
+     * return mysqli_result
+     */
+    function query($sql){
+        return $this->connection->query($sql);
+
     }
 
 }
