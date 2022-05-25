@@ -8,32 +8,32 @@ require_once '../database/UserQuery.php';
 /**
 * El email del usuario con el que inició sesion
 * @acess private
-* @var integer
+* @var string
 */
 $username = $_POST["username"];
 
 /**
  * La contraseña que el usuario introdujo para iniciar sesion
 * @acess private
-* @var integer
+* @var string
 */
 $password = $_POST["password"];
 
 /**
  * Nueva consulta en bases de datos del usuario
  * @acess private
- * @var integer
+ * @var UserQuery
  */
 $userDb = new UserQuery();
+
+
+//Busca al usuario que se solicitó en la base de datos para comprobar si los datos coinciden
 
 /**
  * Usuario de la base de datos
  * @acess private
- * @var integer
+ * @var User
  */
-
-//Busca al usuario que se solicitó en la base de datos para comprobar si los datos coinciden
-
 $user = $userDb->findUser($username);
 if(is_null($user)){
     echo "El usuario no existe";
