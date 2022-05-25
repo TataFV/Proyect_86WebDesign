@@ -13,5 +13,30 @@
             <input type="password" name="password" id="password"></p>
             <input type="button" id="login" value="Iniciar sesión">
         </form>
+        <script>
+            var button = document.getElementById("login")
+            button.addEventListener('click', () => {
+                signIn()
+            });
+
+            /**
+            * Inicia sesion
+            * 
+            * Reliza una petición POST 
+            */
+            function signIn(){
+                var email = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                $.ajax({
+                    data:{"username":email, "password":password},
+                    url:'../controller/LoginController.php',
+                    type:'post',
+                    success:function(response){
+                        console.log(response);
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
