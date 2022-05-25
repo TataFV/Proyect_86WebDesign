@@ -5,7 +5,7 @@ require_once ('../model/User.php');
 
 /**
 * Class UserQuery
-* Realiza las consultas del usuario
+* Realiza las consultas del usuario en base de datos
 */
 Class UserQuery{
 
@@ -34,6 +34,8 @@ Class UserQuery{
         }
         
         $row = $result->fetch_assoc();
+
+        //Instancia en un objeto user la clase User
         $user = new User($row["name"], $row["lastname"], $row["email"], $row["password"], $row["role"]);
         return $user;
     }
