@@ -42,10 +42,13 @@ if(is_null($user)){
 }else if ($password == $user->get_password()){
         //Crear inicio de sesion
         session_start();
+        //si el usuario tiene el rol de CEO 
         if( "CEO" == $user->get_role()){
             //variable_global, almacena datos de inicio de sesion
             $_SESSION['user'] = $user; 
+            //Respuesta que se mostrará con Ajax
             $response = ['error' => false, 'response' => '../view/ceoPanel.php'];
+            //Pasa los datos que contiene el array de PHP a JavaScript
             echo json_encode($response);  
         }
 }else{
