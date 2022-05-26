@@ -36,22 +36,29 @@ $userDb = new UserQuery();
  */
 $user = $userDb->findUser($username);
 
-if(is_null($user)){
-    echo "El usuario no existe";
+if(is_null($user)){ 
 
+    /**
+    * Respuesta que se envía a Ajax
+    * @var response
+    */
+    $response = ['error' => true, 'response' => 'El usuario no existe']; 
+    //Pasa los datos que contiene el array de PHP a JavaScript
+    echo json_encode($response);
+    
 }else if ($password == $user->get_password()){
         //Crear inicio de sesion
         session_start();
         //si el usuario tiene el rol de CEO 
         if( "CEO" == $user->get_role()){
             //variable_global, almacena datos de inicio de sesion
+
             $_SESSION['user'] = $user; 
-            //Respuesta que se mostrará con Ajax
             $response = ['error' => false, 'response' => '../view/ceoPanel.php'];
-            //Pasa los datos que contiene el array de PHP a JavaScript
             echo json_encode($response);  
         }
 }else{
-        echo "La contraseña es incorrecta";
+        $response = ['error' => true, 'response' => 'La contraseña es incorrecta']; 
+        echo json_encode($response);  
     }
 
