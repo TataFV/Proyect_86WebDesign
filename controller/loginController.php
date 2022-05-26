@@ -42,7 +42,12 @@ if(is_null($user)){
 }else if ($password == $user->get_password()){
         //Crear inicio de sesion
         session_start();
-
+        if( "CEO" == $user->get_role()){
+            //variable_global, almacena datos de inicio de sesion
+            $_SESSION['user'] = $user; 
+            $response = ['error' => false, 'response' => '../view/ceoPanel.php'];
+            echo json_encode($response);  
+        }
 }else{
         echo "La contraseña es incorrecta";
     }
