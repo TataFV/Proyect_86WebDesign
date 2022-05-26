@@ -35,12 +35,15 @@ $userDb = new UserQuery();
  * @var User
  */
 $user = $userDb->findUser($username);
+
 if(is_null($user)){
     echo "El usuario no existe";
+
+}else if ($password == $user->get_password()){
+        //Crear inicio de sesion
+        session_start();
+
 }else{
-    if ($password == $user->get_password()){
-        echo "Ok";
-    }else{
         echo "La contraseña es incorrecta";
     }
-}
+
