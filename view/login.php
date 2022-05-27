@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <title></title>
-        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="loginStyles.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
     <body>
