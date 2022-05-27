@@ -1,9 +1,9 @@
 <DOCTYPE html>
 <html lang="es">
     <head>
-    <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <title></title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     </head>
     <body>
         <section id=container>
