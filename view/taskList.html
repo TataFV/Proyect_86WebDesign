@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="formstyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<style>
+    #listTask {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #listTask td,
+    #listTask th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #listTask tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #listTask tr:hover {
+        background-color: #ddd;
+    }
+
+    #listTask th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<body>
+    <section id="listTask">
+        <h1>Historial de Tareas</h1>
+        <div class="containerTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Empleado</th>
+                    </tr>
+                </thead>
+                <tbody id="tasks"></tbody>
+            </table>
+        </div>
+    </section>
+    <script src="taskList.js"></script>
+</body>
+
+</html>
