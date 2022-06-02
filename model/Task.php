@@ -12,7 +12,7 @@ class Task
      * @acess private
      * @var integer
      */
-    private $id;
+    public $id;
 
     /**
      * El nombre de la tarea 
