@@ -63,7 +63,7 @@ function signIn() {
 function showErrorSpan(errorId, message) {
     $('#errorUserNameSpan').remove();
     var span = document.createElement('span');
-    $(span).css({ 'background-color': 'ff7f50', 'color': 'white', 'font-family': 'Courier', 'font-size': '1em', 'padding': '4px', 'border-radius': '4px', 'box-shadow': '4px 4px #CD5C5C' });
+    $(span).css({ 'background-color': '#ff7f50', 'color': 'white', 'font-family': 'Courier', 'font-size': '1em', 'padding': '4px', 'border-radius': '4px', 'box-shadow': '4px 4px #CD5C5C' });
     $(span).attr('id', 'errorUserNameSpan');
     $(errorId).after(span);
     span.innerHTML = message;
