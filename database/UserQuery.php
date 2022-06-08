@@ -1,48 +1,45 @@
 <?php
 
-require_once('DBconnection.php');
-require_once('../model/User.php');
+require_once ('DBconnection.php');
+require_once ('../model/User.php');
 
 /**
- * Class UserQuery
- * Realiza las consultas del usuario en base de datos
- */
-class UserQuery
-{
+* Class UserQuery
+* Realiza las consultas del usuario en base de datos
+*/
+Class UserQuery{
 
     /**
-     * La conexion a la base de datos
-     * @acess private
-     * @var DBconnection
-     */
+    * La conexion a la base de datos
+    * @acess private
+    * @var  DBconnection
+    */
     private $db;
 
-    function __construct()
+    function __construct() 
     {
-        $this->db = new DBconnection();
-    }
+        $this->db=new DBconnection(); 
+    }    
 
     /**
      * Comprueba si el email del usuario existe en la base de datos y si existe devuelve un usuario
      * @param {string} $email el email del usuario que queremos comprobar 
      * Return {$user} - Null - no existe ningún usuario con ese e-mail 
      */
-    public function findUser($email)
-    {
+    public function findUser($email){
         $sql = "SELECT * FROM user WHERE email='" . $email . "';";
         $result = $this->db->query($sql);
 
-        if ($result->num_rows == 0) {
+        if($result->num_rows == 0){
             return null;
         }
-
+        
         $row = $result->fetch_assoc();
 
         //Instancia en un objeto user la clase User
         $user = new User($row["name"], $row["lastname"], $row["email"], $row["password"], $row["role"]);
         return $user;
     }
-
     public function findEmployees()
     {
         $sql = "SELECT * FROM user WHERE user.role='Employee';";
@@ -83,11 +80,4 @@ class UserQuery
 
     }
 }
-    /*public function get_passwordlUser($password){
-        $sql = "SELECT * FROM user WHERE password='" . $password . "';";
-        $result = $this->db->query($sql);  
-    */
-
-
-    
 
