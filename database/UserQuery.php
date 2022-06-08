@@ -41,6 +41,7 @@ class UserQuery
 
         //Instancia en un objeto user la clase User
         $user = new User($row["name"], $row["lastname"], $row["email"], $row["password"], $row["role"]);
+        $user->set_id($row["id"]);
         return $user;
     }
 
