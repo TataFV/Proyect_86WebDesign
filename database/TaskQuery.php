@@ -149,4 +149,21 @@ class TaskQuery{
         $result = $this->db->query($sql);
         return $result;
     }
+
+
+    
+    public function findCurrentTask($id_employee){
+
+        $sql = "SELECT * FROM task WHERE status != 'Finalizada' AND id_employee=" . $id_employee . ";";
+        $result = $this->db->query($sql);
+
+        if ($result->num_rows == 0) {
+            return null;
+        }
+
+        $row = $result->fetch_assoc();
+        $task = $this->createTask($row);
+        return $task;
+    }
+    
 }
