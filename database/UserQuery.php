@@ -11,6 +11,7 @@ class UserQuery
 {
 
     /**
+
      * La conexion a la base de datos
      * @acess private
      * @var DBconnection
@@ -21,6 +22,18 @@ class UserQuery
     {
         $this->db = new DBconnection();
     }
+
+    * La conexion a la base de datos
+    * @acess private
+    * @var  DBconnection
+    */
+    private $db;
+
+    function __construct() 
+    {
+        $this->db=new DBconnection(); 
+    }    
+
 
     /**
      * Comprueba si el email del usuario existe en la base de datos y si existe devuelve un usuario
@@ -83,10 +96,6 @@ class UserQuery
 
     }
 }
-    /*public function get_passwordlUser($password){
-        $sql = "SELECT * FROM user WHERE password='" . $password . "';";
-        $result = $this->db->query($sql);  
-    */
 
 
     
