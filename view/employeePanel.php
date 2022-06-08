@@ -16,7 +16,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="resources/css/indexStyles.css">
+    <link rel="stylesheet" href="resources/css/taskEmployeeStyles.css">
     <script src="resources/scripts/progressBar.js"></script>
+    <script src="resources/scripts/taskEmployee.js"></script>
 
 </head>
 <body>
@@ -25,7 +27,7 @@
                 <div class="container flex">
                     <div classs="userRole">
                         <span class="fa-solid fa-user fa-4x roleImg"></span>
-                        <span class="welcome">Bienvenida <?php echo $user->get_name(); ?></span>
+                        <span class="welcome">Bienvenido <?php echo $user->get_name(); ?></span>
                     </div>
                     <div class="nav"><a class="outline" href="logout.php">Cerrar Sesión</a></div>
                 </div>
@@ -39,7 +41,7 @@
         </div>    
     </nav>
     <div class="indexPage">
-        <div class="container">
+        <div class="container" id="currentTask">
         </div>
     </div>
     <footer class=footer>
