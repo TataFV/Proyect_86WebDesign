@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+    background-color: #ff6900;
+    color: azure;
+    margin: 0px;
+    padding: 20px;
+}
+
+.roleImg {
+    background-color: #ff6900;
+    margin: 30px;
+}
+
+h2 {
+    color: azure;
+    margin-left: 50px;
+}
+
+
+.navbar {
+    padding: 5px;
+
+}
+
+#tabs {
+    display: flex;
+}
+
+.containerRole {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.card h2 {
+    font-family: "Roboto", sans-serif;
+    color: darkblue;
+    text-align: center;
+}
+
+.footer {
+    color: rgba(29, 29, 29, .6)
+}
+
+#footerInfo {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0em;
+    line-height: 1.7em;
+    text-transform: none;
+    bottom: 0;
+}
