@@ -11,7 +11,6 @@ class UserQuery
 {
 
     /**
-
      * La conexion a la base de datos
      * @acess private
      * @var DBconnection
@@ -22,17 +21,6 @@ class UserQuery
     {
         $this->db = new DBconnection();
     }
-
-    * La conexion a la base de datos
-    * @acess private
-    * @var  DBconnection
-    */
-    private $db;
-
-    function __construct() 
-    {
-        $this->db=new DBconnection(); 
-    }    
 
 
     /**
