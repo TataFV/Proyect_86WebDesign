@@ -40,7 +40,7 @@ class Task
 
     /**
      * Prioridad de la tarea: high / medium / low
-     * @var string 
+     * @var integer 
      */
     public $priority;
 
