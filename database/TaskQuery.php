@@ -67,6 +67,30 @@ class TaskQuery{
     }
 
     /**
+     * Busca el Id de las tareas que no tienen asignado ningun empleado y están por hacer en orden descendiente 
+     * Return {$tasks} - Todas las tareas encontradas
+     */
+    public function findTaskWithoutEmployee(){
+
+        $sql = "SELECT id FROM task WHERE id_employee IS NULL AND status='Por hacer' ORDER BY priority desc;"; 
+        $result = $this->db->query($sql);
+
+        $tasks = [];
+        if ($result->num_rows > 0) {
+            //Guarda en un Array el id de las tareas que no estan asignadas a ningun empleado y cuyo estatus es por hacer.
+            //Si no encuentra tareas devuelve el Array vacío
+
+            while ($row = $result->fetch_assoc()) {
+                $aux_task = new Task(null, null, null, null, null);
+                $aux_task->set_id($row["id"]);
+                array_push($tasks, $aux_task);
+            }
+        }
+        return $tasks;
+    }
+    
+
+    /**
      * Guarda las tareas encontradas en cada fila en una variable 
      * @param {string} $row 
      * Return {string} $aux_task - Tareas encontradas
