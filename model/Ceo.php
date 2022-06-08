@@ -1,6 +1,6 @@
 <?php
 
-require_once 'user.php';
+require_once 'User.php';
 
 /**
 * Class Ceo
