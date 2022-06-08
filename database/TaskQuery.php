@@ -123,16 +123,30 @@ class TaskQuery{
 
     /**
      * Introduce en la base de datos la tarea creada a través del formulario
-     * @param {string} $name - nombre de la tarea
-     * @param {string} $description -descripcion de la tarea
+     * @param {string} $name - Nombre de la tarea
+     * @param {string} $description - Descripcion de la tarea
      * @param {string} $type - Tipo de la tarea
      * @param {integer} $priority - Prioridad de la tarea 
-     * Return {string} $aux_task - Tareas creadas 
+     * Return {bolean} $aux_task - True La tarea fué borrada correctamente
      */
 
     public function taskCreate($name, $description, $type, $priority){
         
     $sql = "INSERT INTO task (name, description, priority, type, status) VALUES ('$name', '$description', $priority, '$type', 'Por hacer');";
+    $result = $this->db->query($sql);
+    return $result;
+}
+
+
+    /**
+     * Borra de la base de datos la tarea que se recibe por parametros 
+     * @param {string} $id_task - Id de las tarea a eliminar
+     * Return {bolean} $result - True La tarea fué borrada correctamente
+     */
+
+    public function taskDelete($id_task){
+
+    $sql = "DELETE FROM task where id= " . $id_task . ";";
     $result = $this->db->query($sql);
     return $result;
 }
