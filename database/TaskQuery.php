@@ -88,7 +88,18 @@ class TaskQuery{
         }
         return $tasks;
     }
-    
+
+    /**
+     * Actualiza la base de datos con las tareas asignadas a trabajadores
+     * Return {$tasks} - Todas las tareas encontradas
+     */
+    public function assignTaskToEmployee($id_task, $id_employee){
+
+        $sql = "UPDATE task SET id_employee= " . $id_employee . " WHERE id= " . $id_task . ";"; 
+        $result = $this->db->query($sql);
+        return $result;
+    }
+
 
     /**
      * Guarda las tareas encontradas en cada fila en una variable 
@@ -110,3 +121,18 @@ class TaskQuery{
     }
 }
 
+    /**
+     * Introduce en la base de datos la tarea creada a través del formulario
+     * @param {string} $name - nombre de la tarea
+     * @param {string} $description -descripcion de la tarea
+     * @param {string} $type - Tipo de la tarea
+     * @param {integer} $priority - Prioridad de la tarea 
+     * Return {string} $aux_task - Tareas creadas 
+     */
+
+    public function taskCreate($name, $description, $type, $priority){
+        
+    $sql = "INSERT INTO task (name, description, priority, type, status) VALUES ('$name', '$description', $priority, '$type', 'Por hacer');";
+    $result = $this->db->query($sql);
+    return $result;
+}
