@@ -1,10 +1,14 @@
 <?php
 
 require_once '../model/Task.php';
+require_once '../model/User.php';
 require_once '../database/TaskQuery.php';
 
 $taskDb = new TaskQuery();
 
-$tasks = $taskDb->findCurrentTask();
+session_start();
+$user = $_SESSION["user"];
 
-echo json_encode($tasks);
+$task = $taskDb->findCurrentTask($user->get_id());
+
+echo json_encode($task);
