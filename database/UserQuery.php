@@ -62,8 +62,32 @@ class UserQuery
         }
         return $employees;
     }
+
+    public function findEmployeesWithoutTasks(){
+        $sql= "SELECT id FROM user WHERE role='Employee' AND id NOT IN (SELECT DISTINCT id_employee FROM task WHERE status='En curso' OR status='Por hacer' AND id_employee is not null);";
+        $result = $this->db->query($sql);
+
+        $employees = [];
+        if ($result->num_rows > 0) {
+            //Guarda en un Array todos los empleados sin tareas asignadas. 
+            //Si no encuentra empleados devuelve el Array vacío. 
+
+            while ($row = $result->fetch_assoc()) {
+                $user = new User(null, null, null, null, null);
+                $user->set_id($row['id']);
+
+                array_push($employees, $user);
+            }
+        }
+        return $employees;
+
+    }
 }
     /*public function get_passwordlUser($password){
         $sql = "SELECT * FROM user WHERE password='" . $password . "';";
         $result = $this->db->query($sql);  
     */
+
+
+    
+
