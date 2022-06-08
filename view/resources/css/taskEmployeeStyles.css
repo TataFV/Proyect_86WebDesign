@@ -1,0 +1,19 @@
+#currentTask>div {
+    width: 500px;
+    margin: 50px;
+    padding: 20px;
+    color: aliceblue;
+    border-radius: 6px;
+}
+
+.priority_high {
+    background-color: red;
+}
+
+.priority_medium {
+    background-color: rgb(255, 115, 0);
+}
+
+.priority_low {
+    background-color: rgb(21, 202, 15);
+}
