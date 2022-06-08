@@ -2,6 +2,10 @@
     require_once '../model/User.php';
     session_start();
     $user = $_SESSION['user'];
+
+    if (is_null($user)) {
+        header('Location: login.html');
+    }
 ?>
 <DOCTYPE html>
 <html lang="es">

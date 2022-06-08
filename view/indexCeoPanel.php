@@ -3,6 +3,9 @@
     require_once '../model/User.php';
     session_start();
     $user = $_SESSION['user'];
+    if (is_null($user)) {
+        header('Location: login.html');
+    }
 ?>
 <!doctype html>
 <html lang="es">
@@ -25,7 +28,7 @@
                         <span class="fa-solid fa-user-tie fa-4x roleImg"></span>
                         <span class="welcome">Bienvenida <?php echo $user->get_name(); ?></span>
                     </div>
-                    <div class="nav"><a class="outline" href="logOut.php">Cerrar Sesión</a></div>
+                    <div class="nav"><a class="outline" href="logout.php">Cerrar Sesión</a></div>
                 </div>
             </div>
             <div id="myProgress">

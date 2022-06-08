@@ -53,7 +53,7 @@ if(is_null($user)){
         //si el usuario tiene el rol de CEO 
         if( "CEO" == $user->get_role()){
             //variable_global, almacena datos de inicio de sesion
-            $response = ['error' => false, 'response' => '../view/ceoPanel.php'];
+            $response = ['error' => false, 'response' => '../view/indexCeoPanel.php'];
             echo json_encode($response);
         } else {
             $response = ['error' => false, 'response' => '../view/employeePanel.php'];
