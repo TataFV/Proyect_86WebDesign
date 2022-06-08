@@ -18,6 +18,12 @@
     transition: all .2s linear;
 }
 
+.card h2 {
+    font-family: "Roboto", sans-serif;
+    color: darkblue;
+    text-align: center;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

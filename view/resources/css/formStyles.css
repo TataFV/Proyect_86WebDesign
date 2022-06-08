@@ -126,32 +126,7 @@ body {
     border-style: none;
 }
 
-.navbar {
-    background-color: #054ada;
-    height: 70px;
-    padding: 0 30px;
-}
 
-.navbar h1 {
-    font-size: 30px;
-    font-weight: 300;
-    margin: 10px 0;
-    line-height: 1.2;
-    color: white;
-}
-
-.navbar .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-}
-
-.navbar a:hover {
-    color: #ffffff;
-    border-bottom: 0;
-    text-decoration: none;
-}
 
 /* INPUT*/
 
@@ -184,16 +159,4 @@ textarea {
 textarea {
     resize: none;
     height: 100px;
-}
-
-#myProgress {
-    width: 100%;
-    background-color: #ddd;
-    padding: 0px;
-}
-
-#myBar {
-    width: 1%;
-    height: 10px;
-    background-color: #ff6900;
 }
