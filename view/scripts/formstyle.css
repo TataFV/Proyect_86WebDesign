@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+
+}
+
+#registration-page {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.signup-form {
+    flex: 1;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #054ada;
+    border: 1px solid #054ada;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* FORM HEADER */
+.form-header {
+    padding: 15px 0;
+    border-bottom: 1px solid #054ada;
+}
+
+.form-header h1 {
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+/* FORM BODY */
+.form-body {
+    background: white;
+    padding: 5px 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+}
+
+/* FORM BODY - Gender & Hobbies */
+.radio-group,
+.checkbox-group {
+    display: flex;
+}
+
+.radio-group div,
+.checkbox-group div {
+    flex: 1;
+}
+
+.radio-group label,
+.checkbox-group label {
+    color: #666;
+    cursor: pointer;
+}
+
+/* FORM BODY - Source of Income & Income */
+.range-group {
+    display: flex;
+}
+
+.range-group input {
+    flex: 1;
+}
+
+.range-group label {
+    margin-left: 10px;
+    background-color: #ff6900;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 500px) {
+
+
+    .btn {
+        flex: 1;
+    }
+}
+
+
+/* FORM FOTTER */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #1BBA93;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    color: #bcf5e7;
+    cursor: pointer;
+}
+
+.navbar {
+    background-color: #054ada;
+    height: 70px;
+    padding: 0 30px;
+}
+
+.navbar h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.navbar .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    border-bottom: 0;
+    text-decoration: none;
+}
+
+/* INPUT*/
+
+label {
+    color: #ff6900;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+
+    font-size: 18px;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #666;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+#listTask {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+footer {
+    background-color: #ff6900;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+    padding: 0p;
+}
+
+#myBar {
+    width: 1%;
+    height: 5px;
+    background-color: #ff6900;
+}
