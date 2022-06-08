@@ -119,7 +119,6 @@ class TaskQuery{
 
         return $aux_task;
     }
-}
 
     /**
      * Introduce en la base de datos la tarea creada a través del formulario
@@ -132,10 +131,10 @@ class TaskQuery{
 
     public function taskCreate($name, $description, $type, $priority){
         
-    $sql = "INSERT INTO task (name, description, priority, type, status) VALUES ('$name', '$description', $priority, '$type', 'Por hacer');";
-    $result = $this->db->query($sql);
-    return $result;
-}
+        $sql = "INSERT INTO task (name, description, priority, type, status) VALUES ('$name', '$description', $priority, '$type', 'Por hacer');";
+        $result = $this->db->query($sql);
+        return $result;
+    }
 
 
     /**
@@ -146,7 +145,8 @@ class TaskQuery{
 
     public function taskDelete($id_task){
 
-    $sql = "DELETE FROM task where id= " . $id_task . ";";
-    $result = $this->db->query($sql);
-    return $result;
+        $sql = "DELETE FROM task where id= " . $id_task . ";";
+        $result = $this->db->query($sql);
+        return $result;
+    }
 }
