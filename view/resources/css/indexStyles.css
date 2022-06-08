@@ -6,45 +6,110 @@ h1 {
     padding: 20px;
 }
 
-.roleImg {
-    background-color: #ff6900;
-    margin: 30px;
+.userRole {
+    padding: 100px;
 }
+
+.roleImg {
+    margin: 15px 60px 0px 30px;
+}
+
 
 h2 {
     color: azure;
-    margin-left: 50px;
+    margin: 10px;
+    font-size: 1.5em;
 }
 
+span.welcome {
+    color: azure;
+    margin: 0px;
+    font-size: 2em;
+}
 
 .navbar {
-    padding: 5px;
-
+    background-color: #054ada;
+    padding: 0 30px;
 }
 
-#tabs {
-    display: flex;
+.navbar h1 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 10px;
+    line-height: 1.2;
+    color: white;
 }
 
-.containerRole {
-    background-color: aqua;
+.navbar .flex {
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
 
-.card h2 {
-    font-family: "Roboto", sans-serif;
-    color: darkblue;
+.navbar a:hover {
+    color: #ffffff;
+    border-bottom: 0;
+    text-decoration: none;
+}
+
+.outline {
+    font-weight: bolder;
+    color: aquamarine;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+    padding: 0px;
+}
+
+#myBar {
+    width: 1%;
+    height: 10px;
+    background-color: #ff6900;
+}
+
+
+.topnav {
+    overflow: hidden;
+
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
     text-align: center;
+    padding: 14px 16px;
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
 }
 
 .footer {
-    color: rgba(29, 29, 29, .6)
+    background-color: #eeeeee;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
-#footerInfo {
+#footerInfo,
+#footerInfo span {
+    color: rgba(80, 80, 80, 0.6);
     font-family: "Roboto", sans-serif;
     text-align: center;
     font-weight: 400;
@@ -53,5 +118,30 @@ h2 {
     letter-spacing: 0em;
     line-height: 1.7em;
     text-transform: none;
-    bottom: 0;
+}
+
+#footerInfo span {
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 700px) {
+    div.navbar {
+        padding: 0;
+    }
+
+    span.welcome {
+        font-size: 1.3em;
+    }
+
+    .roleImg {
+        margin: 15px 20px 0px 30px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.0em;
+    }
 }
