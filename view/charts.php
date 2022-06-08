@@ -9,11 +9,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="resources/css/formstyle.css">
+    <title>Gráficas</title>
+    <link rel="stylesheet" href="resources/css/indexStyles.css">
     <link rel="stylesheet" href="resources/css/chartstyle.css">
-    <link rel="stylesheet" href="resources/css/formStyles.css">
-    <script src="resources/scripts/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="resources/scripts/progressBar.js"></script>
     <script src="resources/scripts/charts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
@@ -22,12 +22,13 @@
     <header>
         <div class="navbar">
             <div class="container flex">
-                <h1>Bienvenida
-                    <?php echo $user->get_name(); ?>
-                </h1>
-                <ul>
-                    <li class="nav"><a class="outline" href="">Cerrar Sesión</a></li>
-                </ul>
+                <div classs="userRole">
+                    <span class="fa-solid fa-user-tie fa-4x roleImg"></span>
+                    <span class="welcome">Bienvenida
+                        <?php echo $user->get_name(); ?>
+                    </span>
+                </div>
+                <div class="nav"><a class="outline" href="logOut.php">Cerrar Sesión</a></div>
             </div>
         </div>
         <div id="myProgress">
@@ -36,16 +37,14 @@
     </header>
     <nav class="navbar">
         <div>
-            <div id="tabs">
-                <ul>
-                    <li><a href="indexCeoPanel.php">Empleados</a></li>
-                    <li><a href="tasks.html">Tareas</a></li>
-                    <li><a href="charts.html">Gráficas</a></li>
-                </ul>
+            <div class="topnav">
+                <a href="indexCeoPanel.php">Empleados</a>
+                <a href="tasks.php">Tareas</a>
+                <a href="charts.php">Gráficas</a>
             </div>
         </div>
     </nav>
-    <h1> Gráficas</h1>
+    <h1 class="pageTitle"> GRÁFICAS</h1>
     <div class="chartBox">
         <div id="TaskChart"></div>
     </div>

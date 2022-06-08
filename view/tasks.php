@@ -14,8 +14,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="resources/css/formStyles.css">
     <link rel="stylesheet" href="resources/css/tasksListStyles.css">
-    <link rel="stylesheet" href="resources/css/taskFormStyles.css">
-    <script src="resources/scripts/main.js"></script>
+    <link rel="stylesheet" href="resources/css/indexStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="resources/scripts/progressBar.js"></script>
     <script src="resources/scripts/taskCreate.js"></script>
 
 
@@ -25,12 +26,13 @@
     <header>
         <div class="navbar">
             <div class="container flex">
-                <h1>Bienvenida
-                    <?php echo $user->get_name(); ?>
-                </h1>
-                <ul>
-                    <li class="nav"><a class="outline" href="">Cerrar Sesión</a></li>
-                </ul>
+                <div classs="userRole">
+                    <span class="fa-solid fa-user-tie fa-4x roleImg"></span>
+                    <span class="welcome">Bienvenida
+                        <?php echo $user->get_name(); ?>
+                    </span>
+                </div>
+                <div class="nav"><a class="outline" href="logOut.php">Cerrar Sesión</a></div>
             </div>
         </div>
         <div id="myProgress">
@@ -38,14 +40,15 @@
         </div>
     </header>
     <nav class="navbar">
-        <div id="tabs">
-            <ul>
-                <li><a href="indexCeoPanel.php">Empleados</a></li>
-                <li><a href="tasks.html">Tareas</a></li>
-                <li><a href="charts.html">Gráficas</a></li>
-            </ul>
+        <div>
+            <div class="topnav">
+                <a href="indexCeoPanel.php">Empleados</a>
+                <a href="tasks.php">Tareas</a>
+                <a href="charts.php">Gráficas</a>
+            </div>
         </div>
     </nav>
+    <h1 class="pageTitle">TAREAS</h1>
     <section id="registration-page">
         <form id="task-form">
             <!-- FORM HEADER -->
