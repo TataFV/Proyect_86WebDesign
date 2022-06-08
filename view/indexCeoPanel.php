@@ -7,7 +7,7 @@
         header('Location: login.html');
     }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <title>Ceo Panel</title>
