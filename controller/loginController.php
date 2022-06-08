@@ -6,17 +6,17 @@ require_once '../database/UserQuery.php';
 //Recibe los datos del view y se comunica con la base de datos.
 
 /**
-* El email del usuario con el que inició sesion
-* @acess private
-* @var string
-*/
+ * El email del usuario con el que inició sesion
+ * @acess private
+ * @var string
+ */
 $username = $_POST["username"];
 
 /**
  * La contraseña que el usuario introdujo para iniciar sesion
-* @acess private
-* @var string
-*/
+ * @acess private
+ * @var string
+ */
 $password = $_POST["password"];
 
 /**
@@ -36,13 +36,13 @@ $userDb = new UserQuery();
  */
 $user = $userDb->findUser($username);
 
-if(is_null($user)){ 
+if (is_null($user)) {
 
     /**
-    * Respuesta que se envía a Ajax
-    * @var response
-    */
-    $response = ['error' => true, 'type'=>'username', 'response' => 'El usuario no existe']; 
+     * Respuesta que se envía a Ajax
+     * @var response
+     */
+    $response = ['error' => true, 'type' => 'username', 'response' => 'El usuario no existe'];
     //Pasa los datos que contiene el array de PHP a JavaScript
     echo json_encode($response);
 
@@ -63,5 +63,8 @@ if(is_null($user)){
 }else{
         $response = ['error' => true, 'type'=>'password', 'response' => 'La contraseña es incorrecta']; 
         echo json_encode($response);  
-    }
-
+}
+else {
+    $response = ['error' => true, 'type' => 'password', 'response' => 'La contraseña es incorrecta'];
+    echo json_encode($response);
+}
