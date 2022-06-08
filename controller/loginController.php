@@ -64,7 +64,3 @@ if (is_null($user)) {
         $response = ['error' => true, 'type'=>'password', 'response' => 'La contraseña es incorrecta']; 
         echo json_encode($response);  
 }
-else {
-    $response = ['error' => true, 'type' => 'password', 'response' => 'La contraseña es incorrecta'];
-    echo json_encode($response);
-}
