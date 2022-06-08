@@ -15,11 +15,12 @@ require_once '../database/UserQuery.php';
  */
 $taskDb = new TaskQuery();
 
+//Instancia la clase UserQuery
 $employeeDb = new UserQuery();
 
 
 /**
- * Tareas que se encuentran finalizadas 
+ * Llama al método y devulve las tareas que se encuentran finalizadas 
  * @acess private
  * @var array
  */
@@ -30,6 +31,7 @@ $tasks = $taskDb->findFinishedTasks();
  * @acess private
  * @var array
  */
+
 $employees = $employeeDb->findEmployees();
 
 echo json_encode(['tasks' => $tasks, 'employees' => $employees]);
