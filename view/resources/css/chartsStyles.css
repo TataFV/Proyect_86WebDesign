@@ -1,0 +1,9 @@
+#container {
+    padding: 10px 50px;
+    margin: 20px;
+}
+
+.chartBox {
+    max-width: 1000px;
+    margin: 0 auto;
+}
