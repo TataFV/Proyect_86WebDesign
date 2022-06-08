@@ -100,6 +100,19 @@ class TaskQuery{
         return $result;
     }
 
+    public function startCurrentTask($id_task){
+
+        $sql = "UPDATE task SET status='En curso',startDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
+        $result = $this->db->query($sql);
+        return $result; 
+    }
+    public function finishCurrentTask($id_task){
+
+        $sql = "UPDATE task SET status='Finalizada',finishDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
+        $result = $this->db->query($sql);
+        return $result; 
+    }
+
 
     /**
      * Guarda las tareas encontradas en cada fila en una variable 
