@@ -65,6 +65,9 @@ function showTask(response) {
                 dataType: 'json',
                 data: data,
                 success: function (response) {
+                    if (data.status == "En curso") {
+                        assignTask();
+                    }
                     taskEmployee();
                 }
             });
