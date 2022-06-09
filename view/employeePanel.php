@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="resources/css/taskEmployeeStyles.css">
     <script src="resources/scripts/progressBar.js"></script>
     <script src="resources/scripts/taskEmployee.js"></script>
+    <script src="resources/scripts/assignTask.js"></script>
 
 </head>
 <body>
