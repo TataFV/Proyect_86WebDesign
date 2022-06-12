@@ -23,20 +23,27 @@ class TaskQuery{
 
     /**
      * Busca tareas cuyo "status" sea "Finalizada"
-     * Return {$tasks} -
+     * Return {$tasks} -  Array de tareas encontradas
      */
     public function findFinishedTasks()
     {
         $sql = "SELECT * FROM task WHERE status='Finalizada';";
         $result = $this->db->query($sql);
 
+        //Guarda en un Array todas las tareas 
+        //Si no encuentra tareas finalizadas devuelve el Array vacío 
         $tasks = [];
         if ($result->num_rows > 0) {
             //Guarda en un Array todas las tareas. 
             //Si no encuentra tareas finalizadas devuelve el Array vacío 
+            // Mientras haya filas, con cada fila:  
 
             while ($row = $result->fetch_assoc()) {
+
+                //Crea un objeto de tipo de tarea con los datos de esa fila 
                 $aux_task = $this->createTask($row);
+
+                //Introduce cada vez una tarea al final del Array
                 array_push($tasks, $aux_task);
             }
         }
@@ -45,7 +52,7 @@ class TaskQuery{
 
     /**
      * Busca todas las tareas 
-     * Return {$tasks} - Todas las tareas encontradas
+     * Return {$tasks} - Array de tareas encontradas
      */
 
     public function findAllTasks()
@@ -100,9 +107,31 @@ class TaskQuery{
         return $result;
     }
 
+    /**
+     * Actualiza en la base de datos el estado de la tarea actual a "en curso" y añade la fecha de inicio. 
+     * Return {$bolean} - True si la tarea se actualizo correctamente
+     */
+    public function startCurrentTask($id_task){
+
+        $sql = "UPDATE task SET status='En curso',startDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
+        $result = $this->db->query($sql);
+        return $result; 
+    }
 
     /**
-     * Guarda las tareas encontradas en cada fila en una variable 
+     * Actualiza en la base de datos el estado de la tarea actual a "finalizada" y añade la fecha de fin. 
+     * Return {$bolean} - True si la tarea se actualizo correctamente
+     */
+    public function finishCurrentTask($id_task){
+
+        $sql = "UPDATE task SET status='Finalizada',finishDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
+        $result = $this->db->query($sql);
+        return $result; 
+    }
+
+
+    /**
+     * Guarda las tareas encontradas en cada fila en una variable. Es llamada cuando se quiere 
      * @param {string} $row 
      * Return {string} $aux_task - Tareas encontradas
      */
@@ -149,4 +178,21 @@ class TaskQuery{
         $result = $this->db->query($sql);
         return $result;
     }
+
+
+    
+    public function findCurrentTask($id_employee){
+
+        $sql = "SELECT * FROM task WHERE status != 'Finalizada' AND id_employee=" . $id_employee . ";";
+        $result = $this->db->query($sql);
+
+        if ($result->num_rows == 0) {
+            return null;
+        }
+
+        $row = $result->fetch_assoc();
+        $task = $this->createTask($row);
+        return $task;
+    }
+    
 }

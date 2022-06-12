@@ -52,11 +52,29 @@ function initChart(data) {
       var x = tasks[j].type;
       var y = [startDate.getTime(), finishDate.getTime()];
       var info = tasks[j].name;
+      var priority = "priority_";
+      console.log(tasks[j]);
+
+      //Bucle que asigna la prioridad de la tareas según el valor que tienen asignado. Si es la prioridad 1 es baja,  si es 2 la prioridad es medium, si es 3 la prioridad es high
+      switch (tasks[j].priority) {
+        case "1":
+          priority += 'low';
+          break;
+        case "2":
+          priority += 'medium';
+          break;
+        case "3":
+          priority += 'high';
+        default:
+          break;
+      }
 
       var task = {
         x: x,
         y: y,
-        info: info
+        info: info,
+        priority: priority,
+
       };
 
       //Guarda las tareas realizadas por un mismo trabajador en el array
@@ -91,7 +109,7 @@ function initChart(data) {
       }
     },
     colors: [
-      "#054ada", "#97c1ff", "#c2daff"
+      "#054ada", "#97c1ff", "#0077ff"
     ],
     fill: {
       type: 'solid'
@@ -124,7 +142,10 @@ function initChart(data) {
       }) {
         var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
         return (
-          '<span class="data-tooltip">' + data.info + '</span>'
+          //Tooltip personalizado. Muestra el nombre de la tarea con color de fondo de la prioridad de la misma
+          // https://stackoverflow.com/questions/64620934/how-to-add-custom-tooltip-items-to-apexcharts
+
+          '<span class="data-tooltip ' + data.priority + '">' + data.info + '</span>'
         );
       }
     }

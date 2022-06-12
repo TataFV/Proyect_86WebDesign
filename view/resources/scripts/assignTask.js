@@ -13,9 +13,7 @@ function assignTask() {
             console.log(response);
         }
     });
-
 }
-assignTask();
 
 function task(data) {
 

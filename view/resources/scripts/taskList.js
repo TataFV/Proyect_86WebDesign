@@ -31,6 +31,7 @@ function refreshTable() {
             });
             $('#tasks').html(template);
             $(document).on('click', '.taskDelete', function () {
+                //console.log(this.dataset.task);
                 var id_task = $(this).attr('data-task');
 
                 //Envía al Controller el Id de la tarea que quiere borrar
