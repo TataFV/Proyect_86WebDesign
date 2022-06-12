@@ -109,7 +109,7 @@ function initChart(data) {
       }
     },
     colors: [
-      "#054ada", "#97c1ff", "0077ff"
+      "#054ada", "#97c1ff", "#0077ff"
     ],
     fill: {
       type: 'solid'
