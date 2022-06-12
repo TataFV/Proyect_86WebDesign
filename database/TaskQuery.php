@@ -23,20 +23,27 @@ class TaskQuery{
 
     /**
      * Busca tareas cuyo "status" sea "Finalizada"
-     * Return {$tasks} -
+     * Return {$tasks} -  Array de tareas encontradas
      */
     public function findFinishedTasks()
     {
         $sql = "SELECT * FROM task WHERE status='Finalizada';";
         $result = $this->db->query($sql);
 
+        //Guarda en un Array todas las tareas 
+        //Si no encuentra tareas finalizadas devuelve el Array vacío 
         $tasks = [];
         if ($result->num_rows > 0) {
             //Guarda en un Array todas las tareas. 
             //Si no encuentra tareas finalizadas devuelve el Array vacío 
+            // Mientras haya filas, con cada fila:  
 
             while ($row = $result->fetch_assoc()) {
+
+                //Crea un objeto de tipo de tarea con los datos de esa fila 
                 $aux_task = $this->createTask($row);
+
+                //Introduce cada vez una tarea al final del Array
                 array_push($tasks, $aux_task);
             }
         }
@@ -45,7 +52,7 @@ class TaskQuery{
 
     /**
      * Busca todas las tareas 
-     * Return {$tasks} - Todas las tareas encontradas
+     * Return {$tasks} - Array de tareas encontradas
      */
 
     public function findAllTasks()
