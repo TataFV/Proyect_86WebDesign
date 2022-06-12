@@ -100,12 +100,21 @@ class TaskQuery{
         return $result;
     }
 
+    /**
+     * Actualiza en la base de datos el estado de la tarea actual a "en curso" y añade la fecha de inicio. 
+     * Return {$bolean} - True si la tarea se actualizo correctamente
+     */
     public function startCurrentTask($id_task){
 
         $sql = "UPDATE task SET status='En curso',startDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
         $result = $this->db->query($sql);
         return $result; 
     }
+
+    /**
+     * Actualiza en la base de datos el estado de la tarea actual a "finalizada" y añade la fecha de fin. 
+     * Return {$bolean} - True si la tarea se actualizo correctamente
+     */
     public function finishCurrentTask($id_task){
 
         $sql = "UPDATE task SET status='Finalizada',finishDate=CURRENT_TIMESTAMP WHERE id= " . $id_task . ";";
@@ -115,7 +124,7 @@ class TaskQuery{
 
 
     /**
-     * Guarda las tareas encontradas en cada fila en una variable 
+     * Guarda las tareas encontradas en cada fila en una variable. Es llamada cuando se quiere 
      * @param {string} $row 
      * Return {string} $aux_task - Tareas encontradas
      */
